@@ -25,7 +25,7 @@ namespace DigitalTwins_Samples
             // <Authentication_code>
             string adtInstanceUrl = "https://instance-yong.api.wcus.digitaltwins.azure.net"; 
             
-            var credential = new DefaultAzureCredential();
+            var credential = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ExcludeSharedTokenCacheCredential = true });
             var client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
             Console.WriteLine($"Service client created – ready to go");
             // </Authentication_code>
