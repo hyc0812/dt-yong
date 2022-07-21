@@ -23,7 +23,7 @@ namespace DigitalTwins_Samples
         // </Async_signature>
             Console.WriteLine("Hello World!");
             // <Authentication_code>
-            string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-hostName>"; 
+            string adtInstanceUrl = "https://instance-yong.api.wcus.digitaltwins.azure.net"; 
             
             var credential = new DefaultAzureCredential();
             var client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
