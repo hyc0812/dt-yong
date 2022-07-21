@@ -13,6 +13,7 @@ using Azure;
 using System.Text.Json;
 // </Query_dependencies>
 
+
 namespace DigitalTwins_Samples
 {
     class DigitalTwinsClientAppSample
@@ -22,6 +23,21 @@ namespace DigitalTwins_Samples
         {
         // </Async_signature>
             Console.WriteLine("Hello World!");
+
+            // Setup a listener to monitor logged events.
+            // AzureEventSourceListener listener = AzureEventSourceListener.CreateConsoleLogger();
+
+            DefaultAzureCredentialOptions options = new DefaultAzureCredentialOptions()
+            {
+                Diagnostics =
+                {
+                    LoggedHeaderNames = { "x-ms-request-id" },
+                    LoggedQueryParameters = { "api-version" },
+                    IsLoggingContentEnabled = true
+                }
+            };
+
+
             // <Authentication_code>
             string adtInstanceUrl = "https://instance-yong.api.wcus.digitaltwins.azure.net"; 
             
